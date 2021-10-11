@@ -13,7 +13,8 @@ namespace Demo.API.Endpoints
         {
             var context = httpContext.Features.Get<IExceptionHandlerFeature>();
 
-            return Results.Json(new { ErrorMessage = context.Error.Message, StackTrace = context.Error.StackTrace  });
+            // I am aware this isn't actually logging anything. I was mainly interested in seeing how to use this type of error handling.
+            return Results.Json(new { ErrorMessage = context.Error.Message, context.Error.StackTrace  });
         }
     }
 }
