@@ -19,10 +19,13 @@ var config = new ConfigurationBuilder()
     .AddJsonFile("appsettings.json", optional: false)
     .Build();
 
-builder.Services.AddDbContext<DemoContext>(options => options.UseMySQL("Server=127.0.0.1;Database=demo;User Id=demouser;Password=test123;port=3306"));
-builder.Services.AddScoped<DbContext, DemoContext>();
-
-builder.AddGuitarServices(config["RepositoryImplementation"]);
+var repositoryImplementation = config["RepositoryImplementation"];
+if (repositoryImplementation == "EF")
+{
+    builder.Services.AddDbContext<DemoContext>(options => options.UseMySQL(config.GetConnectionString("Demo")));
+    builder.Services.AddScoped<DbContext, DemoContext>();
+}
+builder.AddGuitarServices(repositoryImplementation);
 
 var app = builder.Build();
 

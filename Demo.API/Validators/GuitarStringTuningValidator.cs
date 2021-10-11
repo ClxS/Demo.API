@@ -4,9 +4,9 @@ using FluentValidation.Results;
 
 namespace Demo.API.Validators
 {
-    public class GuitarStringTuningValidator : AbstractValidator<GuitarTuningDto>
+    internal class GuitarStringTuningValidator : AbstractValidator<GuitarTuningDto>
     {
-        public GuitarStringTuningValidator()
+        internal GuitarStringTuningValidator()
         {
             var validStringTunings = new List<string> { "Ab", "A", "A#", "Bb", "B", "C", "C#", "Db", "D", "D#", "Eb", "E", "F", "F#", "Gb", "G", "G#" };
 

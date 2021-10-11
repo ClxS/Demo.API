@@ -3,9 +3,9 @@ using FluentValidation;
 
 namespace Demo.API.Validators
 {
-    public class GuitarValidator : AbstractValidator<GuitarDto>
+    internal class GuitarValidator : AbstractValidator<GuitarDto>
     {
-        public GuitarValidator()
+        internal GuitarValidator()
         {
             RuleFor(x => x.GuitarType).NotNull().WithMessage("Guitar Type is required.");
             RuleFor(x => x.MaxNumberOfStrings).GreaterThan(0).WithMessage("Max number of strings must be greater than 0.");
