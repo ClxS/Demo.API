@@ -12,7 +12,7 @@ using Demo.Core.Repositories;
 namespace Demo.Tests.UnitTests.API
 {
     /// <summary>
-    /// *NOTE* Microsoft.AspNetCore.Http is internal, so it is difficult to assert the result type we get back from an endpoint call.
+    /// *NOTE* Microsoft.AspNetCore.Http.Result is internal, so it is difficult to assert the result type we get back from an endpoint call.
     /// So, for the time being until a better solution is found, we are asserting on the name of the result type.
     /// </summary>
     public class GuitarEndpointsTests
@@ -268,7 +268,7 @@ namespace Demo.Tests.UnitTests.API
             // Act
             var result = await GuitarEndpoints.DeleteAsync(repository.Object, 1);
 
-            // Assert
+            // Assert            
             Assert.True(result.GetType().Name == "NotFoundObjectResult");
         }
     }
