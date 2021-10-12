@@ -1,1 +1,1 @@
-A simple demo of a .NET 6 minimal API. The concept is a guitar service where one can do CRUD operations on guitars as well as string or tune them. A bit silly, I admit. Howevever, this project was just a way for me to learn how to build a minimal API.
+A simple demo of a .NET 6 minimal API. The concept is a service where one can do CRUD operations on guitars as well as string or tune them. In other words, a silly API. Howevever, this project was just a way for me to learn how to build a minimal API.
